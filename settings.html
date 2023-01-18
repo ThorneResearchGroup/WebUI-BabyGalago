@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="spectre.min.css" rel="stylesheet">
+    <link href="general.css" rel="stylesheet">
+    <link href="navigation.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Baby Galago</title>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Baby Galago settings page" name="description">
+</head>
+<header class="navbar">
+    <section class="navbar-section"></section>
+    <section class="navbar-center">
+        <div class="dropdown">
+            <a class="btn fa fa-cloud-upload-alt" href="upload.html">Upload file</a>
+        </div>
+        <div class="dropdown">
+            <a class=" dropdown-toggle" href="#" tabindex="0">
+                <figure class="btn btn-link nav-btn avatar badge avatar-xl" data-badge="2">
+                    <img alt="blah" src="placeholder.png">
+                    <i class="avatar-presence online"></i>
+                </figure>
+                <i class="icon icon-caret"></i>
+            </a>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="profile.html">
+                        <i class="fa fa-folder"> Summary</i>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="queue.html">
+                        <i class="fa fa-list"> Queue</i>
+                    </a>
+                    <div class="menu-badge">
+                        <label class="label label-primary">2</label>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a href="settings.html">
+                        <i class="fa fa-cog"> Settings</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a class="btn badge fa fa-bell" data-badge="2" href="notifications.html">Notifications</a>
+        </div>
+    </section>
+    <section class="navbar-section">
+        <form action="search.html" method="get">
+            <div class="input-group input-inline">
+                <input class="form-input" placeholder="Search" type="text">
+                <button class="btn input-group-btn fa fa-search"></button>
+            </div>
+        </form>
+    </section>
+</header>
+<div class="sidebar active">
+    <div class="flex-centered">
+        <img alt="" class="sidebar-logo" src="logo.png">
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-home" href="index.html"> Home</a>
+        </li>
+        <div class="settings-divider"></div>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-film" href="browse/movie.html"> Movies</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-tv" href="browse/tvshow.html"> TV Shows</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-gamepad" href="browse/game.html"> Games</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-music" href="browse/music.html"> Music</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-book" href="browse/book.html"> Books</a>
+        </li>
+        <div class="settings-divider"></div>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-user-circle" href="forum/index.html"> Forum</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-newspaper" href="news.html"> News</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-info-circle" href="about.html"> About</a>
+        </li>
+    </ul>
+    <section class="sidebar-footer">
+        <a class="btn btn-link nav-btn" href="licenses.html">
+            <i class="fa fa-copyright fa-rotate-180"></i>
+            2022 T.R.G.</a>
+    </section>
+</div>
+<body>
+<div class="body">
+    <label class="overviewLabel">Server Settings</label>
+    <br><br>
+    <form action="/settings" method="POST">
+        <div>
+            <div class="accordion">
+                <input id="accordion-1" type="radio" name="accordion-radio" hidden="">
+                <label class="accordion-header c-hand" for="accordion-1"><i class="fas fa-arrow-alt-circle-down"></i>
+                    General</label>
+                <div class="accordion-body">
+                    <label>
+                        Interface method:
+                        <select name="interfaceNetworkUsage">
+                            <option value="high">Modal (High)</option>
+                            <option value="low">Redirect (Low)</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Using modals requires the server to send a lot more code, whereas redirects
+                                don't (useful for slow connections)</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Default playback quality:
+                        <select name="defaultPlayback">
+                            <option value="8k">8K</option>
+                            <option value="4k">4K</option>
+                            <option value="2k">2K</option>
+                            <option value="1080p">1080P</option>
+                            <option value="720p">720P</option>
+                            <option value="480p">480P</option>
+                            <option value="360p">360P</option>
+                            <option value="240p">240P</option>
+                            <option value="144p">144P</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>When you visit an item to play it, the player will automatically run at this
+                                quality</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Debug enabled:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to output errors to the server terminal</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Maintenance mode enabled:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>When enabled, this immediatly redirects all users to a page stating the site is
+                                under
+                                construction. Useful for when you need to do maintenance, but don't want to stop the
+                                software.</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Security enabled:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to use logins, or ignore security altogether (WARNING: this will allow
+                                anyone
+                                visiting the page to do anything that normal users could)</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Compression method:
+                        <select>
+                            <option value="gzip">GZip</option>
+                            <option value="brotli">Brotli</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>GZip for HTTP connections, Brotli for HTTPS (brotli is a better compression,
+                                though Mac
+                                A1 chips are currently unsuported)</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Security issuer:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>A string that you should keep secret as it's used for security</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Security secret key:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>WARNING: KEEP THIS SECRET! If someone gets a hold of this, they can make API
+                                keys</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Search host:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The IP address or domain of the search server</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Search key:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The key used to access the search server</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <label>Server name:<input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The name of the server</label>
+                        </div>
+                    </div>
+                    <br>
+                    <form action="/api/upload?type=favicon" enctype="multipart/form-data" method="post">
+                        <label>Favicon:
+                            <input id="fileToUpload" name="fileToUpload" type="file">
+                            <input name="submit" type="submit" value="Upload">
+                        </label>
+                        <div class="popover popover-right">
+                            <i class="fas fa-question-circle"></i>
+                            <div class="popover-container">
+                                <label>The icon next to the URL in the browser</label>
+                            </div>
+                        </div>
+                    </form>
+                    <br>
+                    <label>Allow registrations: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Allow new accounts to be created</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="accordion">
+                <input id="accordion-2" type="radio" name="accordion-radio" hidden="">
+                <label class="accordion-header c-hand" for="accordion-2"><i class="fas fa-arrow-alt-circle-down"></i>
+                    View</label>
+                <div class="accordion-body">
+                    <label>
+                        Display mode:
+                        <select name="displayMode">
+                            <option value="gridView">Grid</option>
+                            <option value="tableView">Table</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The default is grid, table provides a spreadsheet like page</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label class="topicLabel">Home page:</label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>What to show on the home page</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <label class="subLabel">New:</label>
+                    <br>
+                    <label>Books: <input type="checkbox"></label>
+                    <label>Games: <input type="checkbox"></label>
+                    <label>Movies: <input type="checkbox"></label>
+                    <label>Music: <input type="checkbox"></label>
+                    <label>TV Shows: <input type="checkbox"></label>
+                    <br>
+                    <label class="subLabel">Popular:</label>
+                    <br>
+                    <label>Books: <input type="checkbox"></label>
+                    <label>Games: <input type="checkbox"></label>
+                    <label>Movies: <input type="checkbox"></label>
+                    <label>Music: <input type="checkbox"></label>
+                    <label>TV Shows: <input type="checkbox"></label>
+                    <br><br>
+                    <label class="topicLabel">Search:</label>
+                    <br><br>
+                    <label>Search method:
+                        <select name="searchMethod">
+                            <option value="searchDatabase">Database search</option>
+                            <option value="searchServer">Search server</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The method to use to perform searches. Search servers are faster than
+                                databases</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Max results: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The amount of items to display per page</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <label class="topicLabel">Browse:</label>
+                    <br><br>
+                    <label>Max results: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The amount of items to display when browsing</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Font size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Global font size</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Font type: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Global font type</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Font color: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Global font color</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Card width: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The width of item cards</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Sticky top menu: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to keep the top menu always accessible, or make it stay at the top of
+                                the
+                                page</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label class="subLabel">Show in table view:</label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>When you're using the table view, these checkboxes customize the displayed
+                                columns</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Poster: <input type="checkbox"></label>
+                    <br>
+                    <label>Name: <input type="checkbox"></label>
+                    <br>
+                    <label>Runtime: <input type="checkbox"></label>
+                    <br>
+                    <label>Genre: <input type="checkbox"></label>
+                    <br>
+                    <label>MPAA rating: <input type="checkbox"></label>
+                    <br>
+                    <label>User rating: <input type="checkbox"></label>
+                    <br>
+                    <label>Language: <input type="checkbox"></label>
+                    <br>
+                    <label>Release date: <input type="checkbox"></label>
+                    <br>
+                    <label>Actions: <input type="checkbox"></label>
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="accordion">
+                <input id="accordion-3" type="radio" name="accordion-radio" hidden="">
+                <label class="accordion-header c-hand" for="accordion-3"><i class="fas fa-arrow-alt-circle-down"></i>
+                    Encoding</label>
+                <div class="accordion-body">
+                    <label class="subLabel">Programs:</label>
+                    <br>
+                    <label>
+                        Encoder:
+                        <select name="encoderProgram">
+                            <option value="ffmpeg">FFMpeg</option>
+                            <option value="handbrake">HandBrake</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>This program is responsible for transcoding (converting) your files. FFMpeg
+                                is
+                                default.</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Inspector:
+                        <select name="inspectorProgram">
+                            <option value="mediainfo">MediaInfo</option>
+                            <option value="ffprobe">FFProbe</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>This program is responsible for reading in the metadata of your media files.
+                                MediaInfo
+                                is default</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Audio codec:
+                        <select>
+                            <option value="aac">AAC</option>
+                            <option value="mp3">MP3</option>
+                            <option value="flac">FLAC</option>
+                            <option value="ogg">OGG</option>
+                            <option value="alac">ALAC</option>
+                            <option value="ac3">AC3</option>
+                            <option value="wav">WAV</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Which audio codec to use during the transcoding process</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Audio rate:
+                        <select>
+                            <option value="fourEightK">48K</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The audio rate (only supporting 48K for now)</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Audio preset:
+                        <select>
+                            <option value="ultraFast">Ultra fast</option>
+                            <option value="superFast">Super fast</option>
+                            <option value="veryFast">Very fast</option>
+                            <option value="faster">Faster</option>
+                            <option value="fast">Fast</option>
+                            <option value="medium">Medium</option>
+                            <option value="slow">Slow</option>
+                            <option value="slower">Slower</option>
+                            <option value="verySlow">Very slow</option>
+                            <option value="placebo">Placebo</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The audio preset to use during the transcoding process (the slower, the
+                                better
+                                quality)</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video container:
+                        <select>
+                            <option value="flv">FLV</option>
+                            <option value="mp4">MP4</option>
+                            <option value="wmv">WMV</option>
+                            <option value="avi">AVI</option>
+                            <option value="mkv">MKV</option>
+                            <option value="ogv">OGV</option>
+                            <option value="ts">TS</option>
+                            <option value="m2ts">M2TS</option>
+                            <option value="webm">WebM</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The video container to use. MP4 is the most common, WebM is another good
+                                option for
+                                streaming</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video codec:
+                        <select>
+                            <option value="hTwoSixFour">H264</option>
+                            <option value="hTwoSixFive">H265</option>
+                            <option value="flv">FLV</option>
+                            <option value="divx">DivX</option>
+                            <option value="mpegFour">MPEG4</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The video codec to use during the transcoding process (H264 is most
+                                supported)</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video preset:
+                        <select>
+                            <option value="ultraFast">Ultra fast</option>
+                            <option value="superFast">Super fast</option>
+                            <option value="veryFast">Very fast</option>
+                            <option value="faster">Faster</option>
+                            <option value="fast">Fast</option>
+                            <option value="medium">Medium</option>
+                            <option value="slow">Slow</option>
+                            <option value="slower">Slower</option>
+                            <option value="verySlow">Very slow</option>
+                            <option value="placebo">Placebo</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The video preset to use during the transcoding process (the slower, the
+                                better
+                                quality)</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video tune film:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process. Useful when dealing
+                                with
+                                film</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video tune animation:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process. Useful when dealing
+                                with older
+                                animation film</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video tune grain:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video tune still image:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video fast decode:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process. Useful when running on
+                                older
+                                systems or slow hard drives</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video zero latency:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process. Useful when streaming
+                                over the
+                                internet</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video fast start:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process. Useful when using slow
+                                connections
+                                / hard drives</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video tune PSNR:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video tune SSNR:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video CRF:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video black border removal:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process. Removes black borders
+                                around the
+                                picture</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Video CUDA acceleration:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Passed to the encoder during the transcoding process. You must have a
+                                graphics card with
+                                CUDA support</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        144P video transcode bitrate:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The bitrate you wish to use when the transcoder creates a 144P version of
+                                your
+                                media</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        240P video transcode bitrate:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The bitrate you wish to use when the transcoder creates a 240P version of
+                                your
+                                media</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        360P video transcode bitrate:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The bitrate you wish to use when the transcoder creates a 360P version of
+                                your
+                                media</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        480P video transcode bitrate:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The bitrate you wish to use when the transcoder creates a 480P version of
+                                your
+                                media</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        720P video transcode bitrate:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The bitrate you wish to use when the transcoder creates a 720P version of
+                                your
+                                media</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        1080P video transcode bitrate:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The bitrate you wish to use when the transcoder creates a 1080P version of
+                                your
+                                media</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        2K video transcode bitrate:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The bitrate you wish to use when the transcoder creates a 2K version of your
+                                media</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        4K video transcode bitrate:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The bitrate you wish to use when the transcoder creates a 4K version of your
+                                media</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        8K video transcode bitrate:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The bitrate you wish to use when the transcoder creates a 8K version of your
+                                media</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="accordion">
+                <input id="accordion-4" type="radio" name="accordion-radio" hidden="">
+                <label class="accordion-header c-hand" for="accordion-4"><i class="fas fa-arrow-alt-circle-down"></i>
+                    Cache</label>
+                <div class="accordion-body">
+                    <label>Cache enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Globally disable caching things in memory (having this enabled makes the
+                                server
+                                faster)</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Album cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache album entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of album entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Artist cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache artist entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of artist entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Book cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache book entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of book entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Character cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache character entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of character entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Company cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache company entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of company entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Game cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache game entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of game entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Game engine cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache game engine entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of game engine entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Game platform cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache game platform entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of game platform entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Game series cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache game series entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of game series entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Image cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache image entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of image entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Language cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache language entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of language entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Location cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache location entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of location entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Lyrics cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache lyrics entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of lyrics entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Movie cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache movie entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of movie entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>News article cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache news article entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of news article entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Notifications cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache notification entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of notification entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Person cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache person entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of person entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Queue cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache queue entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of queue entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Ratings cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache ratings entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of ratings entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Season cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache season entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of season entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Song cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache song entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of song entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Subtitle cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache subtitle entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of subtitle entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Tv show cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache tv show entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of tv show entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>User cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache user entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of user entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>User settings cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache user settings entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of user settings entities to cache</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Video cache - Enable: <input type="checkbox"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to cache video entities</label>
+                        </div>
+                    </div>
+                    <label>Size: <input type="text"></label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The maximum number of video entities to cache</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="accordion">
+                <input id="accordion-5" type="radio" name="accordion-radio" hidden="">
+                <label class="accordion-header c-hand" for="accordion-5"><i class="fas fa-arrow-alt-circle-down"></i>
+                    Movies</label>
+                <div class="accordion-body">
+                    <label>
+                        Movie library enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Toggles the movie library</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie library path:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Where on disk your movie files are located</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie scan enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Toggles the media scanner. If off and a file is changed, the changes will
+                                not be noticed
+                                by the system</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Movie scan frequency:
+                        <input type="text">
+                        <select name="movieScanFrequency">
+                            <option value="minutes">Minutes</option>
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>How often to scan the library for changes</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode library path:
+                        <input type="text">
+                    </label>
+                    <br>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Where on disk your transcoded movie files are placed</label>
+                        </div>
+                    </div>
+                    <label>
+                        Movie pre-transcode enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode 144P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 144P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode 240P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 240P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode 360P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 360P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode 480P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 480P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode 720P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 720P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode 1080P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 1080P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode 2K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 2K</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode 4K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 4K</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Movie pre-transcode 8K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 8K</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="accordion">
+                <input id="accordion-6" type="radio" name="accordion-radio" hidden="">
+                <label class="accordion-header c-hand" for="accordion-6"><i class="fas fa-arrow-alt-circle-down"></i> TV
+                    Shows</label>
+                <div class="accordion-body">
+                    <label>TV show scan frequency:
+                        <input type="text">
+                        <select name="tvShowScanFrequency">
+                            <option value="minutes">Minutes</option>
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>How often to scan the library for changes</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        TV show library pre-transcode path:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The place on disk where your transcoded files will be placed</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        TV show library enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Toggles the tv show library</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        TV show library path:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Where on disk your tv show files are located</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show scan enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Toggles the media scanner. If off and a file is changed, the changes will
+                                not be noticed
+                                by the system</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        TV show pre-transcode enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your tv show files</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show pre-transcode 144P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 144P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show pre-transcode 240P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 240P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show pre-transcode 360P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 360P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show pre-transcode 480P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 480P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show pre-transcode 720P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 720P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show pre-transcode 1080P:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 1080P</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show pre-transcode 2K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 2K</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show pre-transcode 4K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 4K</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Tv show pre-transcode 8K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your movie files to 8K</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="accordion">
+                <input id="accordion-7" type="radio" name="accordion-radio" hidden="">
+                <label class="accordion-header c-hand" for="accordion-7"><i class="fas fa-arrow-alt-circle-down"></i>
+                    Games</label>
+                <div class="accordion-body">
+                    <label>
+                        Game library enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Toggles the game library</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Game library path:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Where on disk your game files are located</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Game scan enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Toggles the media scanner. If off and a file is changed, the changes will
+                                not be noticed
+                                by the system</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Game scan frequency:
+                        <input type="text">
+                        <select name="gameScanFrequency">
+                            <option value="minutes">Minutes</option>
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>How often to scan the library for changes</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="accordion">
+                <input id="accordion-8" type="radio" name="accordion-radio" hidden="">
+                <label class="accordion-header c-hand" for="accordion-8"><i class="fas fa-arrow-alt-circle-down"></i>
+                    Music</label>
+                <div class="accordion-body">
+                    <label>
+                        Music library enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Where on disk your music files are located</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Music library path:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Where on disk your music files are located</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Music scan enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Toggles the media scanner. If off and a file is changed, the changes will
+                                not be noticed
+                                by the system</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Music scan frequency:
+                        <input type="text">
+                        <select name="musicScanFrequency">
+                            <option value="minutes">Minutes</option>
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>How often to scan the library for changes</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Music library pre-transcode path:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>The place on disk where your transcoded files will be placed</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Music pre-transcode enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode your music files</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Music pre-transcode 64K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode a 64K file</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Music pre-transcode 96K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode a 96K file</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Music pre-transcode 128K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode a 128K file</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Music pre-transcode 320K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode a 320K file</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Music pre-transcode 1411K:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Whether to pre-transcode a 1411K file</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="accordion">
+                <input id="accordion-9" type="radio" name="accordion-radio" hidden="">
+                <label class="accordion-header c-hand" for="accordion-9"><i class="fas fa-arrow-alt-circle-down"></i>
+                    Books</label>
+                <div class="accordion-body">
+                    <label>
+                        Book library enable:
+                        <input type="checkbox" checked>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Toggles the book library</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Book library path:
+                        <input type="text">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Where on disk your book files are located</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>
+                        Book scan enable:
+                        <input type="checkbox">
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>Toggles the media scanner. If off and a file is changed, the changes will
+                                not be noticed
+                                by the system</label>
+                        </div>
+                    </div>
+                    <br>
+                    <label>Book scan frequency:
+                        <input type="text">
+                        <select name="bookScanFrequency">
+                            <option value="minutes">Minutes</option>
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                        </select>
+                    </label>
+                    <div class="popover popover-right">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="popover-container">
+                            <label>How often to scan the library for changes</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <button type="submit">Save</button>
+        <br><br>
+    </form>
+</div>
+</body>
+</html>

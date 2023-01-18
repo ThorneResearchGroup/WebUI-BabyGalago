@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../spectre.min.css" rel="stylesheet">
+    <link href="../general.css" rel="stylesheet">
+    <link href="../navigation.css" rel="stylesheet">
+    <link href="../dropdown.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Baby Galago</title>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Baby Galago browse tv show page" name="description">
+</head>
+<header class="navbar">
+    <section class="navbar-section"></section>
+    <section class="navbar-center">
+        <div class="dropdown">
+            <a class="btn fa fa-cloud-upload-alt" href="../upload.html">Upload file</a>
+        </div>
+        <div class="dropdown">
+            <a class=" dropdown-toggle" href="#" tabindex="0">
+                <figure class="btn btn-link nav-btn avatar badge avatar-xl" data-badge="2">
+                    <img alt="blah" src="../placeholder.png">
+                    <i class="avatar-presence online"></i>
+                </figure>
+                <i class="icon icon-caret"></i>
+            </a>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="../profile.html">
+                        <i class="fa fa-folder"> Summary</i>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="../queue.html">
+                        <i class="fa fa-list"> Queue</i>
+                    </a>
+                    <div class="menu-badge">
+                        <label class="label label-primary">2</label>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a href="../settings.html">
+                        <i class="fa fa-cog"> Settings</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a class="btn badge fa fa-bell" data-badge="2" href="../notifications.html">Notifications</a>
+        </div>
+    </section>
+    <section class="navbar-section">
+        <form action="../search.html" method="get">
+            <div class="input-group input-inline">
+                <input class="form-input" placeholder="Search" type="text">
+                <button class="btn input-group-btn fa fa-search"></button>
+            </div>
+        </form>
+    </section>
+</header>
+<div class="sidebar active">
+    <div class="flex-centered">
+        <img alt="" class="sidebar-logo" src="../logo.png">
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-home" href="../index.html"> Home</a>
+        </li>
+        <div class="divider"></div>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-film" href="../browse/movie.html"> Movies</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-tv" href="../browse/tvshow.html"> TV Shows</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-gamepad" href="../browse/game.html"> Games</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-music" href="../browse/music.html"> Music</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-book" href="../browse/book.html"> Books</a>
+        </li>
+        <div class="divider"></div>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-user-circle" href="../forum/index.html"> Forum</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-newspaper" href="../news.html"> News</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-info-circle" href="../about.html"> About</a>
+        </li>
+    </ul>
+    <section class="sidebar-footer">
+        <a class="btn btn-link nav-btn" href="../licenses.html">
+            <i class="fa fa-copyright fa-rotate-180"></i>
+            2022 T.R.G.</a>
+    </section>
+</div>
+<body>
+<div class="body">
+    <div class="container">
+        <label class="overviewLabel">TV Shows</label>
+        <br>
+        <form id="sortByForm">
+            <label for="sortBy">
+                Sort by:
+                <select id="sortBy" name="sortBy">
+                    <option value="nameAsc">Name Asc</option>
+                    <option value="nameDesc">Name Desc</option>
+                    <option value="yearAsc">Year Asc</option>
+                    <option value="yearDesc">Year Desc</option>
+                    <option value="popularityAsc">Popularity Asc</option>
+                    <option value="popularityDesc">Popularity Desc</option>
+                    <option value="ratingAsc">Rating Asc</option>
+                    <option value="ratingDesc">Rating Desc</option>
+                </select>
+            </label>
+            <button type="submit">Go</button>
+        </form>
+        <div class="leftForms">
+            <form id="filterByForm">
+                <ul class="multidropdown">
+                    <li>
+                        <label class="subLabel">
+                            Filter by:
+                        </label>
+                        <ul>
+                            <li>
+                                <label class="subLabel">Genres<i
+                                        class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                <ul>
+                                    <li>
+                                        <label class="subLabel">A<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Action:
+                                                    <input class="end" type="checkbox">
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Adventure:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Animation:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">C<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Comedy:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Crime:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">D<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Drama:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">F<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Fantasy:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Fiction:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">H<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Historic:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Horror:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">I<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Indie:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">M<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Mystery:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">C<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Romance:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Romantic Comedy:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">S<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Science Fiction:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Sports:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">T<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Thriller:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">W<i class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                        <ul>
+                                            <li>
+                                                <label class="subLabel">
+                                                    War:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="subLabel">
+                                                    Western:
+                                                    <input type="checkbox">
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label class="subLabel">Years<i
+                                        class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                <ul>
+                                    <li>
+                                        <label class="subLabel">
+                                            Start year:
+                                            <input type="text">
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">
+                                            End year:
+                                            <input type="text">
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label class="subLabel">Rating<i
+                                        class="dropdownIcon fas fa-arrow-circle-right"></i></label>
+                                <ul>
+                                    <li>
+                                        <label class="subLabel">
+                                            5:
+                                            <input type="checkbox">
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">
+                                            4:
+                                            <input type="checkbox">
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">
+                                            3:
+                                            <input type="checkbox">
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">
+                                            2:
+                                            <input type="checkbox">
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="subLabel">
+                                            1:
+                                            <input type="checkbox">
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </form>
+            <form id="bulkActions">
+                <ul class="multidropdown">
+                    <li>
+                        <label class="subLabel">
+                            Actions:
+                        </label>
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <a href="../add/tvshow.html"><i class="fas fa-edit"> Create new</i></a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#"><i class="fas fa-check"> Select all</i></a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#"><i class="fa fa-trash"> Delete</i></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <br><br><br>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Select</th>
+                <th>Poster</th>
+                <th>Name</th>
+                <th>Runtime</th>
+                <th>Genre</th>
+                <th>MPAA rating</th>
+                <th>User ratings</th>
+                <th>Language</th>
+                <th>Release date</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-0" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-0-modal"> Delete</a>
+                    <div class="modal" id="delete-0-modal">
+                        <a aria-label="Close" class="modal-overlay" href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=0">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-1" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-1-modal"> Delete</a>
+                    <div class="modal" id="delete-1-modal"><a aria-label="Close" class="modal-overlay"
+                                                              href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=1">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-2" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-2-modal"> Delete</a>
+                    <div class="modal" id="delete-2-modal"><a aria-label="Close" class="modal-overlay"
+                                                              href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=2">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-3" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-3-modal"> Delete</a>
+                    <div class="modal" id="delete-3-modal"><a aria-label="Close" class="modal-overlay"
+                                                              href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=3">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-4" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-4-modal"> Delete</a>
+                    <div class="modal" id="delete-4-modal"><a aria-label="Close" class="modal-overlay"
+                                                              href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=4">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-5" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-5-modal"> Delete</a>
+                    <div class="modal" id="delete-5-modal"><a aria-label="Close" class="modal-overlay"
+                                                              href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=5">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-6" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-6-modal"> Delete</a>
+                    <div class="modal" id="delete-6-modal"><a aria-label="Close" class="modal-overlay"
+                                                              href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=6">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-7" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-7-modal"> Delete</a>
+                    <div class="modal" id="delete-7-modal"><a aria-label="Close" class="modal-overlay"
+                                                              href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=7">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-8" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-8-modal"> Delete</a>
+                    <div class="modal" id="delete-8-modal"><a aria-label="Close" class="modal-overlay"
+                                                              href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=8">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-9" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-9-modal"> Delete</a>
+                    <div class="modal" id="delete-9-modal"><a aria-label="Close" class="modal-overlay"
+                                                              href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=9">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-10" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-10-modal"> Delete</a>
+                    <div class="modal" id="delete-10-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=10">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-11" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-11-modal"> Delete</a>
+                    <div class="modal" id="delete-11-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=11">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-12" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-12-modal"> Delete</a>
+                    <div class="modal" id="delete-12-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=12">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-13" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-13-modal"> Delete</a>
+                    <div class="modal" id="delete-13-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=13">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-14" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-14-modal"> Delete</a>
+                    <div class="modal" id="delete-14-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=14">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-15" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-15-modal"> Delete</a>
+                    <div class="modal" id="delete-15-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=15">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-16" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-16-modal"> Delete</a>
+                    <div class="modal" id="delete-16-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=16">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-17" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-17-modal"> Delete</a>
+                    <div class="modal" id="delete-17-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=17">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-18" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-18-modal"> Delete</a>
+                    <div class="modal" id="delete-18-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=18">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    <input class="selectCheckbox" name="checkbox-19" type="checkbox">
+                </td>
+                <td>
+                    <img alt="Poster image" class="table-image" src="../poster.png">
+                </td>
+                <td>The Shawshank Redemption</td>
+                <td>1H20M</td>
+                <td>Crime, Drama</td>
+                <td>PG-13</td>
+                <td>5/5</td>
+                <td>EN</td>
+                <td>14 October 1994</td>
+                <td>
+                    <a class="btn btn-link fas fa-play" href="../play/movie.html"> Play</a>
+                    <a class="btn btn-link fa fa-edit" href="../news.html"> Edit</a>
+                    <br>
+                    <a class="btn btn-link fa fa-eye" href="../view/tvshow.html"> View</a>
+                    <a class="btn btn-link fa fa-trash" href="#delete-19-modal"> Delete</a>
+                    <div class="modal" id="delete-19-modal"><a aria-label="Close" class="modal-overlay"
+                                                               href="#modals"></a>
+                        <div class="modal-container">
+                            <div class="modal-header"><a aria-label="Close" class="btn btn-clear float-right"
+                                                         href="#modals"></a>
+                                <div class="modal-title h5">Confirm deletion</div>
+                            </div>
+                            Are you sure you want to delete: MOVIE ?
+                            <br><br>
+                            This action cannot be undone!
+                            <div class="modal-footer">
+                                <a class="btn btn-link" href="../api/delete/movie?id=19">DELETE</a>
+                                <a class="btn btn-link" href="#modals">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="divider"></div>
+    <ul class="pagination">
+        <li class="page-item disabled">
+            <a href="#">Previous</a>
+        </li>
+        <li class="page-item active">
+            <a href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a href="#">3</a>
+        </li>
+        <li class="page-item">
+            <span>...</span>
+        </li>
+        <li class="page-item">
+            <a href="#">12</a>
+        </li>
+        <li class="page-item">
+            <a href="#">Next</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

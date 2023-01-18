@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../spectre.min.css" rel="stylesheet">
+    <link href="../general.css" rel="stylesheet">
+    <link href="../navigation.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Baby Galago</title>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Baby Galago browse book page" name="description">
+</head>
+<header class="navbar">
+    <section class="navbar-section"></section>
+    <section class="navbar-center">
+        <div class="dropdown">
+            <a class="btn fa fa-cloud-upload-alt" href="../upload.html">Upload file</a>
+        </div>
+        <div class="dropdown">
+            <a class=" dropdown-toggle" href="#" tabindex="0">
+                <figure class="btn btn-link nav-btn avatar badge avatar-xl" data-badge="2">
+                    <img alt="blah" src="../placeholder.png">
+                    <i class="avatar-presence online"></i>
+                </figure>
+                <i class="icon icon-caret"></i>
+            </a>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="../profile.html">
+                        <i class="fa fa-folder"> Summary</i>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="../queue.html">
+                        <i class="fa fa-list"> Queue</i>
+                    </a>
+                    <div class="menu-badge">
+                        <label class="label label-primary">2</label>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a href="../settings.html">
+                        <i class="fa fa-cog"> Settings</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a class="btn badge fa fa-bell" data-badge="2" href="../notifications.html">Notifications</a>
+        </div>
+    </section>
+    <section class="navbar-section">
+        <form action="../search.html" method="get">
+            <div class="input-group input-inline">
+                <input class="form-input" placeholder="Search" type="text">
+                <button class="btn input-group-btn fa fa-search"></button>
+            </div>
+        </form>
+    </section>
+</header>
+<div class="sidebar active">
+    <div class="flex-centered">
+        <img alt="" class="sidebar-logo" src="../logo.png">
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-home" href="../index.html"> Home</a>
+        </li>
+        <div class="divider"></div>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-film" href="../browse/movie.html"> Movies</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-tv" href="../browse/tvshow.html"> TV Shows</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-gamepad" href="../browse/game.html"> Games</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-music" href="../browse/music.html"> Music</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-book" href="../browse/book.html"> Books</a>
+        </li>
+        <div class="divider"></div>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-user-circle" href="../forum/index.html"> Forum</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-newspaper" href="../news.html"> News</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-link nav-btn fa fa-info-circle" href="../about.html"> About</a>
+        </li>
+    </ul>
+    <section class="sidebar-footer">
+        <a class="btn btn-link nav-btn" href="../licenses.html">
+            <i class="fa fa-copyright fa-rotate-180"></i>
+            2022 T.R.G.</a>
+    </section>
+</div>
+<body>
+<div class="body">
+    <label class="overviewLabel">Books</label>
+    <br>
+    <form id="sortByForm">
+        <label for="sortBy">
+            Sort by:
+            <select id="sortBy" name="sortBy">
+                <option value="nameAsc">Name Asc</option>
+                <option value="nameDesc">Name Desc</option>
+                <option value="yearAsc">Year Asc</option>
+                <option value="yearDesc">Year Desc</option>
+                <option value="popularityAsc">Popularity Asc</option>
+                <option value="popularityDesc">Popularity Desc</option>
+                <option value="ratingAsc">Rating Asc</option>
+                <option value="ratingDesc">Rating Desc</option>
+            </select>
+        </label>
+        <button type="submit">Go</button>
+    </form>
+    <br><br>
+    <div class="container">
+        <label class="subLabel">Nothing to show</label>
+    </div>
+    <br><br>
+    <div class="divider"></div>
+    <ul class="pagination">
+        <li class="page-item disabled">
+            <a href="#">Previous</a>
+        </li>
+        <li class="page-item active">
+            <a href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a href="#">3</a>
+        </li>
+        <li class="page-item">
+            <span>...</span>
+        </li>
+        <li class="page-item">
+            <a href="#">12</a>
+        </li>
+        <li class="page-item">
+            <a href="#">Next</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
